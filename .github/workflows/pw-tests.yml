@@ -11,7 +11,7 @@ permissions:
     id-token: write
 
 jobs:
- run-smoke--tests:
+ run-smoke-tests:
    timeout-minutes: 5
    runs-on: ubuntu-latest
    steps:
@@ -67,7 +67,9 @@ jobs:
          path: |
            ~/.cache/ms-playwright
          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+         
  run-all-tests:
+   needs: [run-smoke-tests]
    timeout-minutes: 5
    runs-on: ubuntu-latest
    steps:
