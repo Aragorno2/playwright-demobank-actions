@@ -1,0 +1,10 @@
+### Trigger simple workflow without parameters
+POST https://api.github.com/repos/USERNAME/REPONAME/actions/workflows/YML-WORKFLOWNAME/dispatches
+accept: application/vnd.github+json
+authorization: Bearer ___________
+X-GitHub-Api-Version: 2022-11-28
+
+
+{
+    "ref": "main"
+}
